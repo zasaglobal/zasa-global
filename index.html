@@ -4,72 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ZASA GLOBAL | Trusted Products, Global Standards</title>
+    <title>ZASA GLOBAL | Global Trading & Sourcing</title>
+
+    <meta name="description" content="ZASA GLOBAL is a growing international trading and sourcing company focused on connecting quality products with global markets.">
+
+    <meta name="keywords" content="ZASA GLOBAL, global trading, sourcing, export, import, international business">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
+            font-family: Arial, Helvetica, sans-serif;
             background: #ffffff;
             color: #111827;
+            line-height: 1.6;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        /* ================= HEADER ================= */
+
         header {
-            background: #ffffff;
-            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e5e7eb;
+
+            padding: 18px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #eeeeee;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 800;
+            font-size: 25px;
+            font-weight: 900;
             letter-spacing: 2px;
+            color: #111827;
         }
 
         .logo span {
             color: #0b5cff;
         }
 
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
         nav a {
-            text-decoration: none;
-            color: #111827;
-            margin-left: 25px;
-            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #0b5cff;
         }
 
+        /* ================= HERO ================= */
+
         .hero {
-            min-height: 80vh;
+            min-height: 88vh;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(135deg, #f7faff, #ffffff);
+
+            padding: 80px 7%;
+
+            background:
+                radial-gradient(circle at top right, #eaf2ff, transparent 35%),
+                linear-gradient(135deg, #f8fbff, #ffffff);
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 950px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border: 1px solid #dbe7ff;
+            border-radius: 50px;
+
+            background: #f5f8ff;
+
+            color: #0b5cff;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: 60px;
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
@@ -77,268 +133,518 @@
         }
 
         .hero p {
-            font-size: 20px;
+            max-width: 760px;
+            margin: 0 auto 35px;
+
             color: #667085;
-            line-height: 1.7;
-            margin-bottom: 35px;
+
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            background: #0b5cff;
-            color: white;
-            text-decoration: none;
+
+            padding: 14px 26px;
+
             border-radius: 8px;
-            font-weight: 700;
-            margin: 5px;
-        }
 
-        .btn:hover {
-            background: #0044cc;
-        }
+            background: #0b5cff;
+            color: #ffffff;
 
-        .btn-outline {
-            background: white;
-            color: #0b5cff;
-            border: 2px solid #0b5cff;
-        }
+            font-weight: 800;
+            font-size: 14px;
 
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #667085;
-            margin-bottom: 45px;
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .product {
-            border: 1px solid #eeeeee;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
             transition: 0.3s;
         }
 
-        .product:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #0045cc;
         }
 
-        .product-icon {
-            font-size: 55px;
-            margin-bottom: 20px;
+        .btn-outline {
+            background: #ffffff;
+            color: #0b5cff;
+            border: 1px solid #0b5cff;
         }
 
-        .product h3 {
+        .btn-outline:hover {
+            background: #0b5cff;
+            color: #ffffff;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 90px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 55px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: #667085;
+            font-size: 17px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #ffffff;
+        }
+
+        .about-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: #667085;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .about-card {
+            padding: 40px;
+
+            border-radius: 20px;
+
+            background: #f7faff;
+
+            border: 1px solid #e3ecff;
+        }
+
+        .about-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #667085;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: #f8fafc;
+        }
+
+        .service-grid {
+            max-width: 1150px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .service {
+            background: #ffffff;
+
+            border: 1px solid #e5e7eb;
+
+            border-radius: 16px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .service-number {
+            color: #0b5cff;
+            font-size: 13px;
+            font-weight: 900;
+            margin-bottom: 18px;
+        }
+
+        .service h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* ================= WHY US ================= */
+
+        .why-grid {
+            max-width: 1050px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 30px;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+
+            background: #ffffff;
+        }
+
+        .why-card h3 {
             margin-bottom: 10px;
         }
 
-        .product p {
+        .why-card p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        /* ================= GLOBAL ================= */
+
+        .global {
+            background: #111827;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .global .section-heading p {
+            color: #cbd5e1;
+        }
+
+        .markets {
+            max-width: 850px;
+            margin: auto;
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .market {
+            padding: 12px 20px;
+
+            border: 1px solid #374151;
+            border-radius: 50px;
+
+            color: #e5e7eb;
+
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* ================= PRODUCTS COMING SOON ================= */
+
+        .coming {
+            background: #f8fbff;
+            text-align: center;
+        }
+
+        .coming-box {
+            max-width: 850px;
+            margin: auto;
+
+            padding: 55px 30px;
+
+            border: 1px solid #dbe7ff;
+            border-radius: 22px;
+
+            background: #ffffff;
+        }
+
+        .coming-box .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .coming-box h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .coming-box p {
+            color: #667085;
+            margin-bottom: 25px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #ffffff;
+        }
+
+        .contact-grid {
+            max-width: 950px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .contact-card {
+            padding: 35px;
+
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+
+            background: #ffffff;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .contact-card p {
             color: #667085;
             margin-bottom: 20px;
         }
 
-        .about {
-            background: #f7faff;
+        .contact-link {
+            display: block;
+
+            color: #0b5cff;
+
+            font-weight: 700;
+
+            margin-top: 10px;
+
+            word-break: break-word;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            padding: 80px 7%;
+
             text-align: center;
+
+            background: linear-gradient(135deg, #eef5ff, #ffffff);
         }
 
-        .about-content {
-            max-width: 850px;
-            margin: auto;
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
         }
 
-        .about p {
-            font-size: 18px;
-            line-height: 1.8;
+        .cta p {
             color: #667085;
+            margin-bottom: 25px;
         }
 
-        .contact {
-            text-align: center;
-        }
-
-        .contact-box {
-            max-width: 650px;
-            margin: auto;
-        }
+        /* ================= FOOTER ================= */
 
         footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
+            background: #0b1220;
+            color: #ffffff;
+
+            padding: 45px 7%;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 12px;
         }
 
         footer p {
-            color: #cbd5e1;
-            margin-top: 8px;
+            color: #94a3b8;
+            font-size: 14px;
         }
 
-        @media (max-width: 768px) {
+        footer a {
+            display: block;
+
+            color: #cbd5e1;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: 35px auto 0;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #1f2937;
+
+            text-align: center;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
 
             header {
-                padding: 18px 5%;
+                padding: 16px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
             }
 
             nav {
                 display: none;
             }
 
-            .hero h1 {
-                font-size: 42px;
+            section {
+                padding: 65px 5%;
+            }
+
+            .hero {
+                min-height: 80vh;
+                padding: 70px 5%;
             }
 
             .hero p {
-                font-size: 17px;
+                font-size: 16px;
             }
 
-            section {
-                padding: 60px 5%;
+            .section-heading h2 {
+                font-size: 32px;
             }
 
-            .section-title {
-                font-size: 30px;
+            .service-grid {
+                grid-template-columns: 1fr;
             }
+
+            .cta h2 {
+                font-size: 31px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
-    <div class="logo">
+    <a href="#home" class="logo">
         ZASA <span>GLOBAL</span>
-    </div>
+    </a>
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#products">Products</a>
         <a href="#about">About</a>
+        <a href="#services">What We Do</a>
+        <a href="#global">Global</a>
         <a href="#contact">Contact</a>
     </nav>
 
 </header>
 
 
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
 
     <div class="hero-content">
 
+        <div class="hero-badge">
+            GLOBAL TRADING • SOURCING • INTERNATIONAL BUSINESS
+        </div>
+
         <h1>
-            Welcome to <span>ZASA GLOBAL</span>
+            Connecting Quality Products
+            <span>to Global Markets.</span>
         </h1>
 
         <p>
-            Trusted Products. Global Standards.
-            Discover quality products from a growing global brand.
+            ZASA GLOBAL is a growing international business focused on
+            trading, sourcing and connecting reliable products with
+            opportunities across global markets.
         </p>
 
-        <a href="#products" class="btn">
-            Explore Products
-        </a>
+        <div class="buttons">
 
-        <a href="#contact" class="btn btn-outline">
-            Contact Us
-        </a>
-
-    </div>
-
-</section>
-
-
-<section id="products">
-
-    <h2 class="section-title">
-        Our Products
-    </h2>
-
-    <p class="section-subtitle">
-        Quality products selected for our customers.
-    </p>
-
-
-    <div class="products">
-
-        <div class="product">
-
-            <div class="product-icon">👕</div>
-
-            <h3>Fashion</h3>
-
-            <p>
-                Premium fashion products.
-            </p>
-
-            <a href="#contact" class="btn">
-                Order Now
+            <a href="#about" class="btn">
+                Discover ZASA GLOBAL
             </a>
 
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-icon">👟</div>
-
-            <h3>Footwear</h3>
-
-            <p>
-                Quality footwear products.
-            </p>
-
-            <a href="#contact" class="btn">
-                Order Now
-            </a>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-icon">👜</div>
-
-            <h3>Bags</h3>
-
-            <p>
-                Stylish and quality bags.
-            </p>
-
-            <a href="#contact" class="btn">
-                Order Now
-            </a>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-icon">🌾</div>
-
-            <h3>Agro Products</h3>
-
-            <p>
-                Quality agricultural products.
-            </p>
-
-            <a href="#contact" class="btn">
-                Order Now
+            <a href="#contact" class="btn btn-outline">
+                Business Inquiry
             </a>
 
         </div>
@@ -347,65 +653,451 @@
 
 </section>
 
+
+<!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
 
-    <div class="about-content">
+    <div class="section-heading">
 
-        <h2 class="section-title">
+        <h2>
             About ZASA GLOBAL
         </h2>
 
         <p>
-            ZASA GLOBAL is a growing global business focused on
-            providing trusted, quality products to customers.
-            Our mission is to build a reliable international brand
-            based on quality, trust and customer satisfaction.
+            Building a trusted name for international business.
         </p>
+
+    </div>
+
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <h3>
+                A Future-Focused Global Business
+            </h3>
+
+            <p>
+                ZASA GLOBAL is being developed as an international
+                trading and sourcing brand connecting quality products
+                with customers, businesses and markets around the world.
+            </p>
+
+            <p>
+                Our focus is built around reliability, responsible
+                business practices, product quality and long-term
+                relationships.
+            </p>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <h3>
+                Our Vision
+            </h3>
+
+            <p>
+                To build a trusted global brand recognized for quality,
+                reliability, innovation and strong international
+                business relationships.
+            </p>
+
+        </div>
 
     </div>
 
 </section>
 
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="section-heading">
+
+        <h2>
+            What We Do
+        </h2>
+
+        <p>
+            Our business is designed to connect suppliers,
+            products and markets.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service">
+
+            <div class="service-number">
+                01
+            </div>
+
+            <h3>
+                Global Trading
+            </h3>
+
+            <p>
+                Exploring opportunities to connect quality products
+                with domestic and international markets.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-number">
+                02
+            </div>
+
+            <h3>
+                Product Sourcing
+            </h3>
+
+            <p>
+                Identifying reliable suppliers and suitable products
+                according to market requirements.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-number">
+                03
+            </div>
+
+            <h3>
+                Export & Import
+            </h3>
+
+            <p>
+                Developing international trade opportunities with
+                a focus on reliable and efficient business relationships.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-number">
+                04
+            </div>
+
+            <h3>
+                Business Development
+            </h3>
+
+            <p>
+                Building long-term partnerships with buyers,
+                suppliers and business professionals.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section>
+
+    <div class="section-heading">
+
+        <h2>
+            Why Choose ZASA GLOBAL?
+        </h2>
+
+        <p>
+            Our foundation is built around trust and long-term value.
+        </p>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <h3>
+                Reliability
+            </h3>
+
+            <p>
+                We aim to build dependable relationships with
+                customers, suppliers and business partners.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                Quality Focus
+            </h3>
+
+            <p>
+                Quality and customer satisfaction remain central
+                to our future product and sourcing strategy.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <h3>
+                Global Mindset
+            </h3>
+
+            <p>
+                We are building ZASA GLOBAL with an international
+                outlook and long-term global ambitions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GLOBAL MARKETS ================= -->
+
+<section class="global" id="global">
+
+    <div class="section-heading">
+
+        <h2>
+            Global Business Outlook
+        </h2>
+
+        <p>
+            We aim to develop connections across diverse international
+            markets and business networks.
+        </p>
+
+    </div>
+
+
+    <div class="markets">
+
+        <div class="market">Middle East</div>
+
+        <div class="market">South Asia</div>
+
+        <div class="market">Southeast Asia</div>
+
+        <div class="market">Europe</div>
+
+        <div class="market">Africa</div>
+
+        <div class="market">Global Markets</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="coming" id="products">
+
+    <div class="coming-box">
+
+        <div class="icon">
+            ◇
+        </div>
+
+        <h2>
+            Products Coming Soon
+        </h2>
+
+        <p>
+            We are currently developing our product portfolio.
+            Selected products and sourcing opportunities will be
+            introduced here as they become available.
+        </p>
+
+        <a href="#contact" class="btn">
+            Contact ZASA GLOBAL
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
-    <div class="contact-box">
+    <div class="section-heading">
 
-        <h2 class="section-title">
-            Place Your Order
+        <h2>
+            Let's Do Business
         </h2>
 
-        <p class="section-subtitle">
-            Contact us to order products or learn more about our business.
+        <p>
+            Interested in sourcing, trading or building a business
+            relationship with ZASA GLOBAL? Get in touch with us.
         </p>
 
-        <a href="mailto:yourbusiness@gmail.com" class="btn">
-            Email Us
-        </a>
+    </div>
 
-        <a href="#" class="btn btn-outline">
-            WhatsApp
-        </a>
+
+    <div class="contact-grid">
+
+
+        <div class="contact-card">
+
+            <h3>
+                Email
+            </h3>
+
+            <p>
+                Send us your business inquiry or partnership proposal.
+            </p>
+
+            <a
+                class="contact-link"
+                href="mailto:zasaglobalbd@gmail.com"
+            >
+                zasaglobalbd@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>
+                WhatsApp
+            </h3>
+
+            <p>
+                Contact us directly for business communication.
+            </p>
+
+            <a
+                class="btn"
+                href="https://wa.me/8801601400121"
+                target="_blank"
+            >
+                Chat on WhatsApp
+            </a>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        Let's Build Global Connections.
+    </h2>
+
+    <p>
+        ZASA GLOBAL — Connecting opportunities across markets.
+    </p>
+
+    <a href="mailto:zasaglobalbd@gmail.com" class="btn">
+        Start a Conversation
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-    <h3>ZASA GLOBAL</h3>
+    <div class="footer-grid">
 
-    <p>
-        Trusted Products. Global Standards.
-    </p>
 
-    <p>
+        <div>
+
+            <h3>
+                ZASA GLOBAL
+            </h3>
+
+            <p>
+                Global Trading • Sourcing • Export & Import
+            </p>
+
+            <p style="margin-top:10px;">
+                Building a trusted international business brand.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#services">What We Do</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <a href="mailto:zasaglobalbd@gmail.com">
+                Email Us
+            </a>
+
+            <a
+                href="https://wa.me/8801601400121"
+                target="_blank"
+            >
+                WhatsApp
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
         © 2026 ZASA GLOBAL. All Rights Reserved.
-    </p>
+
+    </div>
 
 </footer>
+
 
 </body>
 </html>
